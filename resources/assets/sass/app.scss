@@ -2,11 +2,12 @@
 @import "variables";
 
 body {
-    background-color: #fff;
+    background-color: #fafafa;
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
     font-size: 100%;
     font-weight: 500;
+    padding-top: 60px;
 }
 
 .header {
@@ -14,7 +15,30 @@ body {
     background-color: $header;
     color: #fff;
     min-height: 60px;
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header__title {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.header__actions {
+    margin-left: auto;
+}
+ 
+.list {
+    z-index: 10;
 }
 
 .item {
@@ -23,7 +47,12 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 1rem;
+    background: #fff;
     border-bottom: 1px solid #eee;
+}
+
+.item--active {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .item__icon {
@@ -32,8 +61,12 @@ body {
 }
 
 .item__maps-icon {
-    color: #aaa;
+    color: #e6007c;
     margin-left: 1rem;
+}
+
+.item__details {
+    flex-grow: 1;
 }
 
 .title {
@@ -45,10 +78,66 @@ body {
 
 .description {
     margin: 0;
-    color: #aaa;
+    color: rgba(#000, .54);
     font-size: 0.85rem;
+}
+
+.item-information {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    min-height: 20vh;
+}
+
+.item-information__content {
+    padding: 1rem;
+}
+
+.item-information__actions {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    margin-top: auto;
+
+    & .btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0.5rem;
+        color: $header;
+        background-color: #fff;
+        border: 0px transparent;
+        flex-grow: 1;
+        border-top: 1px solid rgba(#000, 0.15);
+        border-bottom: 1px solid rgba(#000, 0.15);
+
+        &:first-child {
+            border-right: 1px solid rgba(#000, 0.15);
+        }
+
+        &:hover,
+        &:focus {
+            border-color: $header;
+            color: #fff;
+            background-color: $header;
+            outline: none;
+        }
+    }
 }
 
 svg {
     fill: currentColor;
+}
+
+.coffee {
+    color: #795548;
+}
+
+.restaurant {
+    color: #9c27b0;
+}
+
+.clothing {
+    color: #009688;
 }
