@@ -1,0 +1,54 @@
+@import "~normalize.css";
+@import "variables";
+
+body {
+    background-color: #fff;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    font-weight: 500;
+}
+
+.header {
+    display: block;
+    background-color: $header;
+    color: #fff;
+    min-height: 60px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.item__icon {
+    color: $header;
+    margin-right: 1rem;
+}
+
+.item__maps-icon {
+    color: #aaa;
+    margin-left: 1rem;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: .6rem;
+}
+
+.description {
+    margin: 0;
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+svg {
+    fill: currentColor;
+}
