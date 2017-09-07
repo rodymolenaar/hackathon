@@ -1,5 +1,16 @@
 @import "~normalize.css";
+@import "~bulma/sass/utilities/_all";
+
 @import "variables";
+
+@import "~bulma";
+
+@import "~buefy/src/scss/utils/_functions";
+@import "~buefy/src/scss/utils/_variables";
+@import "~buefy/src/scss/utils/_helpers";
+@import "~buefy/src/scss/utils/_animations";
+
+@import "~buefy/src/scss/components/_checkbox";
 
 body {
     background-color: #fafafa;
@@ -14,17 +25,20 @@ body {
     display: block;
     background-color: $header;
     color: #fff;
-    min-height: 60px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem 0 1rem;
+    padding: 1rem;
     z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+}
+
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__title {
@@ -36,7 +50,22 @@ body {
 .header__actions {
     margin-left: auto;
 }
- 
+
+.header__view {
+    display: none;
+    overflow: auto;
+}
+
+.header--open {
+    bottom: 0;
+
+    & .header__view {
+        display: block;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+}
+
 .list {
     z-index: 10;
 }
@@ -69,14 +98,13 @@ body {
     flex-grow: 1;
 }
 
-.title {
+.item__title {
     font-size: 1rem;
     font-weight: 600;
     margin: 0;
-    margin-bottom: .6rem;
 }
 
-.description {
+.item__description {
     margin: 0;
     color: rgba(#000, .54);
     font-size: 0.85rem;
@@ -130,6 +158,12 @@ svg {
     fill: currentColor;
 }
 
+.item__icon {
+    height: 30px;
+    width: 30px;
+    color: #aaa;
+}
+
 .coffee {
     color: #795548;
 }
@@ -140,4 +174,36 @@ svg {
 
 .clothing {
     color: #009688;
+}
+
+.beauty {
+    color: $header;
+}
+
+.sport {
+    color: #2196f3;
+}
+
+.store {
+    color: #ff9800;
+}
+
+.checkbox {
+    font-size: 1rem;
+    width: 100%;
+
+    input[type=checkbox] + .check {
+        border-color: #fff;
+        margin-right: 1rem;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+
+    &:focus {
+        input[type=checkbox] + .check {
+            box-shadow: none;
+        }
+    }
 }

@@ -13,23 +13,7 @@
 
 Route::get('/', function () {
 
-    $places = [
-        (object) [
-            'title' => 'McDonalds',
-            'description' => 'Stationsstraat 55',
-            'type' => 'restaurant'
-        ],
-        (object) [
-            'title' => 'Mockamore',
-            'description' => 'De Diagonaal 3',
-            'type' => 'coffee'
-        ],
-        (object) [
-            'title' => 'Pull & Bear',
-            'description' => 'Citadel 27',
-            'type' => 'clothing'
-        ]
-    ];
+    $places = App\Place::orderBy('type')->get();
 
     return view('index')->with(compact('places'));
 });

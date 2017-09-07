@@ -1,3 +1,4 @@
+import Buefy from 'buefy';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -17,7 +18,8 @@ window.Vue = require('vue');
 
 
 Vue.component('h-places', require('./components/Places.vue'));
-Vue.component('h-place', require('./components/Place.vue'));
+Vue.component('h-app', require('./components/App.vue'));
+Vue.component(Buefy.Checkbox.name, Buefy.Checkbox);
 
 const app = new Vue({
     el: '#app'
